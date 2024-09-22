@@ -1,0 +1,54 @@
+digraph G {
+    // Configuración del grafo
+    graph [rankdir=TB];
+    node [shape=box];
+
+    // Clusters
+    subgraph cluster_normativas {
+        label = "Normativas Aplicables";
+        style=dashed;
+        normativa1 [label="Código de Aguas"];
+        normativa2 [label="Reglamento de Saneamiento"];
+        normativa3 [label="Normas ISO"];
+        normativa4 [label="Normas locales"];
+    }
+
+    subgraph cluster_variables {
+        label = "Variables a Considerar";
+        style=dashed;
+        variable1 [label="Calidad del agua"];
+        variable2 [label="Demanda de agua"];
+        variable3 [label="Fuentes de suministro"];
+        variable4 [label="Condiciones climáticas"];
+        variable5 [label="Costos de instalación"];
+        variable6 [label="Impacto ambiental"];
+    }
+
+    // Relaciones entre clusters y nodos
+    diseño [label="Diseño de Instalaciones" shape=ellipse];
+    
+    diseño -> normativa1 [label="se basa en"];
+    diseño -> normativa2 [label="debe cumplir con"];
+    diseño -> normativa3 [label="considera"];
+    diseño -> normativa4 [label="incluye"];
+    
+    diseño -> variable1 [label="requiere evaluar"];
+    diseño -> variable2 [label="determina"];
+    diseño -> variable3 [label="depende de"];
+    diseño -> variable4 [label="afecta"];
+    diseño -> variable5 [label="influye en"];
+    diseño -> variable6 [label="evalúa impacto en"];
+
+    // Agrupación
+    normativas -> normativa1;
+    normativas -> normativa2;
+    normativas -> normativa3;
+    normativas -> normativa4;
+
+    variables -> variable1;
+    variables -> variable2;
+    variables -> variable3;
+    variables -> variable4;
+    variables -> variable5;
+    variables -> variable6;
+}
